@@ -2,6 +2,8 @@
 #include "Walnut/EntryPoint.h"
 
 #include "Walnut/Image.h"
+#include "imgui_internal.h"
+#include "imgui_rotate.h"
 
 class ExampleLayer : public Walnut::Layer
 {
@@ -9,10 +11,15 @@ public:
 	virtual void OnUIRender() override
 	{
 		ImGui::Begin("Hello");
-		ImGui::Button("Button");
+		//ImGui::Button("Button");
+
+		ImGui::Text("Hi!");
+		ImRotateStart();
+		ImGui::Text("Rotated text");
+		ImRotateEnd(3.14f / 4.0f, ImGui::GetItemRectMin()); // 3.14f / 4.0f is radian
 		ImGui::End();
 
-		ImGui::ShowDemoWindow();
+		//ImGui::ShowDemoWindow();
 	}
 };
 
