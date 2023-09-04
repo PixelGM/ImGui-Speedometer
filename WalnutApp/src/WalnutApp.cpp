@@ -10,10 +10,9 @@ class ExampleLayer : public Walnut::Layer
 public:
 	virtual void OnUIRender() override
 	{
-		ImGui::Begin("Hello");
+		ImGui::Begin("Welcome!");
 		//ImGui::Button("Button");
 
-		ImGui::Text("Hi!");
 		ImGui::Dummy(ImVec2(0.0f, 500.0f)); // Down Space (Enter)
 		ImGui::Indent(700.0f); // Right Space (Space/Tab)
 		//ImGui::SameLine(0.0f, 500.0f);
@@ -29,7 +28,7 @@ public:
 Walnut::Application* Walnut::CreateApplication(int argc, char** argv)
 {
 	Walnut::ApplicationSpecification spec;
-	spec.Name = "Walnut Example";
+	spec.Name = "Spedometer Program";
 
 	Walnut::Application* app = new Walnut::Application(spec);
 	app->PushLayer<ExampleLayer>();
