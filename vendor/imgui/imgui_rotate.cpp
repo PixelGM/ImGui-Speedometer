@@ -20,9 +20,12 @@ ImVec2 ImRotationCenter()
 
 ImVec2 operator-(const ImVec2& l, const ImVec2& r) { return{ l.x - r.x, l.y - r.y }; }
 
-// Use Radian
-void ImRotateEnd(float rad, ImVec2 center)
+// Use Degree
+void ImRotateEnd(float degree, ImVec2 center)
 {
+    // Convert degree to radian
+    float rad = degree * (3.14159265358979323846 / 180.0);
+
     float s = sin(rad), c = cos(rad);
     center = ImRotate(center, s, c) - center;
 
