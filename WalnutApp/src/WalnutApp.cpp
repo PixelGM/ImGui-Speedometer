@@ -14,9 +14,12 @@ public:
 		//ImGui::Button("Button");
 
 		ImGui::Text("Hi!");
+		ImGui::Dummy(ImVec2(0.0f, 500.0f)); // Down Space (Enter)
+		ImGui::Indent(700.0f); // Right Space (Space/Tab)
+		//ImGui::SameLine(0.0f, 500.0f);
 		ImRotateStart();
-		ImGui::Text("Rotated text");
-		ImRotateEnd(3.14f / 4.0f, ImGui::GetItemRectMin()); // 3.14f / 4.0f is radian
+		ImGui::Text("--------------------------------X");
+		ImRotateEnd(30.0f, ImRotationCenter()); // Edit the degree from 0 - 180 range.
 		ImGui::End();
 
 		//ImGui::ShowDemoWindow();
